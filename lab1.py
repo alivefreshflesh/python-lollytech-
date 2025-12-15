@@ -1,4 +1,7 @@
 # Нужно поместить файл sport.txt в одну папку с программой и запустить
+# Программа была переписана с использованием requests, чтобы не было необходимости скачивать файл
+# Пожалуйста, перейдите по ссылке ниже
+# https://github.com/alivefreshflesh/python-lollytech-/blob/main/lab1_new.py
 
 from collections import Counter
 
