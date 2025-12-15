@@ -1,0 +1,35 @@
+import requests
+import matplotlib.pyplot as plt
+
+data = requests.get("https://raw.githubusercontent.com/dm-fedorov/python_basic/master/data/opendata.stat").text
+
+lines = data.strip().split("\n")
+lines = lines[1::]
+
+pensions_2018 = []
+
+dates = []
+values = []
+
+for line in lines:
+    parts = line.split(",")
+    
+    name = parts[0]
+    region = parts[1]
+    date = parts[2][:-3:]
+    value = int(parts[3])
+    
+    if name == "Средняя пенсия" and region == "Забайкальский край" and date[:4:] == "2018":
+        pensions_2018.append(value)
+        dates.append(date)
+        values.append(value)
+
+average_pension = sum(pensions_2018) / len(pensions_2018)
+print("Средняя пенсия в Забайкальском крае за 2018 год:", round(average_pension, 2))
+
+plt.plot(dates, values)
+plt.title("Изменение средней пенсии в Забайкальском крае за 2018 год")
+plt.xlabel("Дата")
+plt.ylabel("Пенсия")
+plt.grid(True)
+plt.show()
