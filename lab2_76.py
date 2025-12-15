@@ -31,5 +31,8 @@ plt.plot(dates, values)
 plt.title("Изменение средней пенсии в Забайкальском крае за 2018 год")
 plt.xlabel("Дата")
 plt.ylabel("Пенсия")
+plt.xticks(rotation=45) # чтоб  по оси абсцисс не было текста друг на друге
 plt.grid(True)
+plt.tight_layout() # чтоб не было обрезанного окна (добавил из-за xticks)
 plt.show()
+
