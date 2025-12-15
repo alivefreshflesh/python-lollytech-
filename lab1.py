@@ -1,3 +1,5 @@
+# Нужно поместить файл sport.txt в одну папку с программой и запустить
+
 from collections import Counter
 
 sport_count = Counter()
