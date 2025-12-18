@@ -12,15 +12,10 @@ with open('sport.txt', 'r', encoding='cp1251') as file:
     
     for line in file:
         parts = line.strip().split('\t')
-        if len(parts) < 4:
-            continue
-        
         sports_str = parts[3].strip()
         if not sports_str:
             continue
-        
-        sports = [s.strip() for s in sports_str.split(',') if s.strip()]
-        
+        sports = [s.strip() for s in sports_str.split(',')]
         sport_count.update(sports)
 
 top_3_sports = sport_count.most_common(3)
