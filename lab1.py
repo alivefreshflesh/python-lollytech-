@@ -22,4 +22,4 @@ top_3_sports = sport_count.most_common(3)
 
 print("Три наиболее популярных вида спорта по количеству объектов:")
 for i, (sport, count) in enumerate(top_3_sports):
-    print(f"{i}. {sport} — {count} объектов")
+    print(f"{i + 1}. {sport} — {count} объектов")
